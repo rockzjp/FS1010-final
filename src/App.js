@@ -6,6 +6,7 @@ import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Blog from './components/Blog/Blog'; 
 import Login from './components/Login/Login'
+import Admin from './components/Admin/Admin';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 
@@ -20,6 +21,9 @@ function App() {
               <Route path="/blog" component={Blog} />
               <Route path="/contact" component={Contact} />
               <Route path="/login" component={Login} />
+              <Route path="/admin" component={Admin} />
+              
+
           </Switch>
           <Footer />
         </div>

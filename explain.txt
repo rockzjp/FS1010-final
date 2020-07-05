@@ -1,0 +1,8 @@
+1. npm install for the file and api-server file;
+
+2. running both server, one is webpage at port: 3000, and api-server at port: 3001;
+
+
+3. login test info: username: test@email.com 
+                    password: 12345678
+

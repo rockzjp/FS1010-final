@@ -1,6 +1,8 @@
 import React from 'react';
+import $ from 'jquery';
 import './Login.scss';
 import InputField from './inputField';
+
 
 function Login() {
   const inputRefs = React.useRef(
@@ -22,6 +24,7 @@ function Login() {
 
        for (let i=0; i<inputRefs.current.length; i++){
          const valid = inputRefs.current[i].current.validate()
+
          if(!valid){
            isValid = false
            
@@ -30,6 +33,30 @@ function Login() {
        if(!isValid){
          return
        }
+      
+      $.ajax({
+        type: "post",
+        url: "http://localhost:3001/auth" ,
+        dataType : "json",
+        contentType : "application/json", 
+        data: JSON.stringify(data),
+        success: function (res) {
+          if(res.status === 0)
+          {
+              
+              console.log(res.token)
+
+              
+
+              
+              window.location = '/admin'
+          }
+          else
+          {
+              alert(res.message)
+          }
+        }
+      }) 
   }
   return (
     
